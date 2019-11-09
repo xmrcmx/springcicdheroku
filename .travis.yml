@@ -12,7 +12,5 @@ services:
 after_success:
 - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 - export IMAGE_NAME=xmrcmx/springcicdheroku
-- docker build -t $IMAGE_NAME:latest .
-- docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:latest
-- docker images;
-- docker push $IMAGE_NAME:latest
+- docker build -t $IMAGE_NAME:emir .
+- docker push $IMAGE_NAME:emir
