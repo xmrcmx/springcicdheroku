@@ -7,15 +7,6 @@ services:
 
 script:
   - ./mvnw clean install -B
-  - ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
-
-addons:
-  sonarcloud:
-    organization: "xmrcmx"
-    token:
-      secure: "f0c6523a68a52abbb4697c4df9c35fd7efdfbd32"
-
-
 
 after_success:
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
