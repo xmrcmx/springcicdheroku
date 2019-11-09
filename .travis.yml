@@ -19,5 +19,4 @@ after_success:
   - eval "$(ssh-agent -s)"
   - chmod 600 ./deploy_key
   - echo -e "Host 172.105.65.197\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  - ssh -i ./deploy_key root@172.105.65.197 "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker container stop `docker container ls -qf publish=8080` && docker run -d -p 8080:8080 xmrcmx/springcicdheroku:emir"
-
+  - ssh -i ./deploy_key root@172.105.65.197 "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && if docker container stop `docker container ls -qf publish=8080`; then fi && docker run -d -p 8080:8080 xmrcmx/springcicdheroku:emir"
