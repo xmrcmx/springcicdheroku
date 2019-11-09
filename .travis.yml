@@ -7,7 +7,12 @@ services:
   - docker
 
 after_success:
-- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-- export IMAGE_NAME=xmrcmx/springcicdheroku
-- docker build -t $IMAGE_NAME:emir .
-- docker push $IMAGE_NAME:emir
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - export IMAGE_NAME=xmrcmx/springcicdheroku
+  - docker build -t $IMAGE_NAME:emir .
+  - docker push $IMAGE_NAME:emir
+
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  app: springcicdheroku
