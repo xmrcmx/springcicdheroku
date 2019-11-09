@@ -13,7 +13,7 @@ addons:
   sonarcloud:
     organization: "xmrcmx"
     token:
-      secure: $SONAR_TOKEN
+      secure: "f0c6523a68a52abbb4697c4df9c35fd7efdfbd32"
 
 
 
