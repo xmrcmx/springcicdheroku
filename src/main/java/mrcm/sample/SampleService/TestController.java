@@ -9,7 +9,7 @@ public class TestController {
 
     @GetMapping("/sayhello")
     public TestEntity sayHello() {
-        return new TestEntity("Hello updated1!");
+        return new TestEntity("Hello updated2!");
     }
 
 }
