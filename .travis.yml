@@ -5,6 +5,10 @@ jdk: openjdk8
 services:
   - docker
 
+script:
+- ./mvnw clean install -B
+- ./mvnw clean sonar:sonar
+
 addons:
   sonarcloud:
     organization: "xmrcmx"
